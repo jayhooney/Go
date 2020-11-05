@@ -1,1 +1,0 @@
-Hi Go lang. this tis file IO test
