@@ -1,1 +1,7 @@
-[{"Brand":"KEYCHRON","Switch":"RED"},{"Brand":"VAMILO","Switch":"SLIENT RED"},{"Brand":"LEOPOLD_FC_980C","Switch":"TOPRE"},{"Brand":"LOGITECH","Switch":"Membrain"},{"Brand":"HANSUNG","Switch":"Noppoo"}]
+[
+  { "Brand": "KEYCHRON", "Switch": "RED" },
+  { "Brand": "VAMILO", "Switch": "SLIENT RED" },
+  { "Brand": "LEOPOLD_FC_980C", "Switch": "TOPRE" },
+  { "Brand": "LOGITECH", "Switch": "Membrain" },
+  { "Brand": "HANSUNG", "Switch": "Noppoo" }
+]
