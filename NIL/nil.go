@@ -33,12 +33,14 @@ func main() {
 					tmpVarD is []
 					tmpVarC,tmpVarD are nil ?   true true
 
+		결론 : nil 이란 명시적인 초기값이 없는 경우라 보면 되곘다.
+
 
 
 	*/
 
-	var tmpVarA []string = []
-	var tmpVarB []int = []
+	tmpVarA := [3]string{"a", "b", "c"}
+	tmpVarB := [3]int{1, 2, 3}
 	var tmpVarC []string
 	var tmpVarD []int
 
