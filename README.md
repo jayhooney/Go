@@ -38,4 +38,5 @@ Main 패키지
 3. install
 
 - 직계 상위 디렉토리 코드 전체를 대상으로 한 명령파일을 생성하는 명령어
-  > 참고 1. <https://medium.com/@whj2013123218/go-run-build-install-fa29cab5bc32>
+
+> 참고 1. <https://medium.com/@whj2013123218/go-run-build-install-fa29cab5bc32>
