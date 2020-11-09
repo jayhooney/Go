@@ -5,7 +5,6 @@ import (
 )
 
 //Variadic functions
-
 func Variadic(intVals ...int) int {
 	fmt.Println(`1. 가변 함수`)
 
@@ -22,6 +21,7 @@ func Variadic(intVals ...int) int {
 	return sum
 }
 
+//MultipleReturnValues
 func MultipleReturnValues(params ...int) (int, string) {
 	fmt.Println(`2. 다중 반환 함수 `)
 
@@ -41,6 +41,17 @@ func MultipleReturnValues(params ...int) (int, string) {
 
 }
 
+
+// closures & anonymous functions
+// 음..? 이건 언제 쓰려나...? 일종의 콜백인가..?
+func Closures() func() int {
+	i := 0
+	return func() int {
+		i ++
+		return i
+	}
+}
+
 func main() {
 	fmt.Println(`func study`)
 
@@ -50,5 +61,19 @@ func main() {
 
 	multipleResult, msg := MultipleReturnValues(params...)
 	fmt.Println(msg, multipleResult)
+
+	closureValueA := Closures()
+
+	for idx := 0; idx < 10; idx ++ {
+		fmt.Println(`now A value : `, closureValueA());
+	}
+
+
+	closureValueB := Closures()
+	for idx := 0; idx < 10; idx ++ {
+		fmt.Println(`now A value : `, closureValueA());
+		fmt.Println(`now B value : `, closureValueB());
+	}
+	
 
 }
