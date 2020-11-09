@@ -58,6 +58,3 @@ func main() {
 		fmt.Println(ae.prob)
 	}
 }
-
-
-// 이상하다 싶었어. 왜 잔디가 안 심어지는거야 ? 쒸익
