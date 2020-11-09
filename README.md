@@ -24,3 +24,18 @@ Main 패키지
 근데.. 내가 만든 패키지에 선언된 함수는 왜 자동완성이 안될까..
 
 > 참고 1. <https://medium.com/backend-habit/setting-golang-plugin-on-vscode-for-autocomplete-and-auto-import-30bf5c58138a>
+
+## 4. go run? build? install?
+
+1. run
+
+- 현재 작성한 go 파일을 테스트 하는 용도로 씀.
+
+2. build
+
+- go 파일을 실행명령 파일로 만들어주는 명령어.
+
+3. install
+
+- 직계 상위 디렉토리 코드 전체를 대상으로 한 명령파일을 생성하는 명령어
+  > 참고 1. <https://medium.com/@whj2013123218/go-run-build-install-fa29cab5bc32>
