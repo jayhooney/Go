@@ -1,40 +1,21 @@
+	
 package main
+import "fmt"
 
-import (
-	"fmt"
-)
-
-func GoroutineFuncA(from chan string){
-	from <- `jay`
-	for idx,len:=0,10; idx < len; idx ++ {
-		fmt.Println(`<GoroutineFuncA> FROM : `, <- from, `=> `, idx)
-	}
-}
-
-func GoroutineFuncB(from chan string){
-	from <- `hoon`
-	for idx,len:=0,10; idx < len; idx ++ {
-		fmt.Println(`<GoroutineFuncB> FROM : `, <- from, `=> `, idx)
-	}
+func GoFunc(writer chan string) {
+	// 채널에 값 전달
+	writer <- "jay"
 }
 
 func main() {
 
-	fmt.Println(` ===== GO ROUTINE AND CHANNEL =====`)
+	// 채널 생성
+	writer := make(chan string)
 
+	go GoFunc(writer)
 
-	fromChannel := make(chan string)
-	
-	go GoroutineFuncB(fromChannel)
-	
-	go GoroutineFuncA(fromChannel)
-
-	fmt.Println(<- fromChannel)
-
-	
-
-	fmt.Println(`END`)
-
-	
+	// 채널 값 받아오기
+	myName := <- writer
+	fmt.Println(`my name is`, myName)
 
 }
