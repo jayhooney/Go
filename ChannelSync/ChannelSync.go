@@ -13,10 +13,10 @@ func Logger(msg chan string){
 	time.Sleep(3 * time.Second)
 	fmt.Println(`ALRIGHT!`)
 	time.Sleep(2 * time.Second)
-	fmt.Println(`GO!`)
+	fmt.Println(`THE TIME IS NOW !`)
 
 
-	msg <- `THE TIME IS NOW !`
+	msg <- `GO !`
 
 }
 
@@ -27,6 +27,9 @@ func main() {
 
 	go Logger(msg)
 
+
+	// <- msg
+	// msg 채널의 값을 강제로 받아오게끔 해서 동기화 시키는 방법.
 	fmt.Println(<-msg)
 
 
