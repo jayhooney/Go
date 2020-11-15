@@ -10,7 +10,8 @@ func main() {
 	messages := make(chan string)
 	signals := make(chan bool)
 
-	// Default 로 들어감
+	// messages 에서 값을 사용할 수 있는 경우엔 case절로 진입하지만
+	// 그렇지 않은 경우엔 default 절로 진입.
 	select {
 	case msg := <-messages:
 		fmt.Println("sent message", msg)
