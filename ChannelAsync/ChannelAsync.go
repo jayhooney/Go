@@ -10,6 +10,7 @@ func main() {
 	messages := make(chan string)
 	signals := make(chan bool)
 
+	// Default 로 들어감
 	select {
 	case msg := <-messages:
 		fmt.Println("sent message", msg)
@@ -19,6 +20,7 @@ func main() {
 
 	msg := "hello golang !"
 
+	// Default 로 들어감
 	select {
 	case messages <- msg:
 		fmt.Println(`sent message`, msg)
