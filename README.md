@@ -2,7 +2,10 @@
 
 ```
 고언어 연습용 토이 프로젝트 레파지토리
+챕터별 진행내용은 아래 링크를 통해 진행
 ```
+
+출처 : <https://mingrammer.com/gobyexample/>
 
 # Concept
 
