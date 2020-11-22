@@ -47,4 +47,19 @@ func main() {
 	logger(myBirthday.Add(duration))
 	logger(myBirthday.Add(-duration))
 
+	logger(`===== TIME STAMP =====`)
+
+	secs := now.Unix()
+	nanos := now.UnixNano()
+	logger(now)
+
+	// UnixMillis 는 따로 없어서 아래 방법으로 계산해야함.
+	millis := nanos / 1000000
+	logger(secs)
+	logger(millis)
+	logger(nanos)
+
+	logger(time.Unix(secs, 0))
+	logger(time.Unix(0, nanos))
+
 }
