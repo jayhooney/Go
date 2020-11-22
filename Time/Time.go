@@ -62,4 +62,32 @@ func main() {
 	logger(time.Unix(secs, 0))
 	logger(time.Unix(0, nanos))
 
+	logger(`===== TIME FORMATTING =====`)
+
+	// RFC3339에 해당하는 레이아웃 상수를 사용해 시간을 포맷팅.
+	logger(now.Format(time.RFC3339))
+
+	timeA, _ := time.Parse(time.RFC3339, "2020-11-22T23:10:50+00:00")
+	logger(timeA)
+
+	// 커스텀 레이아웃
+	logger(now.Format("7:31PM"))
+	logger(now.Format("SUN NOV _2 06:31:31 2020"))
+	logger(now.Format("2020-11-22T11:13:05.00.999999-07:00"))
+
+	form := " 23 14 PM"
+
+	timeB, _ := time.Parse(form, "7 31 PM")
+	logger(timeB)
+
+	// 이렇게 한땀 한땀 넣어줄 수도 있다.
+	fmt.Printf("%d-%02d-%02dT%02d:%02d:%02d-00:00\n",
+		now.Year(), now.Month(), now.Day(),
+		now.Hour(), now.Minute(), now.Second())
+
+	// 잘못된 입력값 들어오면 에러 반환
+	ansic := "Mon Jan _2 15:04:05 2006"
+	_, e := time.Parse(ansic, "8:41PM")
+	logger(e)
+
 }
