@@ -1,4 +1,4 @@
-# Go lang toy project
+# Go lang basic practice
 
 ```
 고언어 연습용 토이 프로젝트 레파지토리
