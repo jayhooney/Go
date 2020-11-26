@@ -1,4 +1,4 @@
-package main
+package mydb
 
 import (
 	"database/sql"
@@ -16,7 +16,7 @@ func CheckErr(err error) {
 	}
 }
 
-func main() {
+func DBProcess() []Models.Topic {
 	db, err := sql.Open(secret.GetEngine(), secret.GetDBInfo())
 	CheckErr(err)
 	defer db.Close()
@@ -41,21 +41,23 @@ func main() {
 		log.Println(topic.DOCID, topic.TERMS)
 	}
 
-	var emotionSlice []Models.Emotion
-	emotionRows, err := db.Query(secret.GetQuery("EMOTION"))
-	CheckErr(err)
-	defer emotionRows.Close()
+	// var emotionSlice []Models.Emotion
+	// emotionRows, err := db.Query(secret.GetQuery("EMOTION"))
+	// CheckErr(err)
+	// defer emotionRows.Close()
 
-	for emotionRows.Next() {
-		var emotion Models.Emotion
-		err := emotionRows.Scan(&emotion.Seq, &emotion.CmtID, &emotion.Emotion)
-		CheckErr(err)
+	// for emotionRows.Next() {
+	// 	var emotion Models.Emotion
+	// 	err := emotionRows.Scan(&emotion.Seq, &emotion.CmtID, &emotion.Emotion)
+	// 	CheckErr(err)
 
-		emotionSlice = append(emotionSlice, emotion)
-	}
+	// 	emotionSlice = append(emotionSlice, emotion)
+	// }
 
-	for _, emotion := range emotionSlice {
-		log.Println(emotion.Seq, emotion.CmtID, emotion.Emotion)
-	}
+	// for _, emotion := range emotionSlice {
+	// 	log.Println(emotion.Seq, emotion.CmtID, emotion.Emotion)
+	// }
+
+	return topicSlice
 
 }

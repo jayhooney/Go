@@ -1,9 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+
+	mydb "../MySQL"
 )
 
 func Middleware(f http.HandlerFunc) http.HandlerFunc {
@@ -14,17 +17,15 @@ func Middleware(f http.HandlerFunc) http.HandlerFunc {
 }
 
 func ReqTest1(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Request : /reqeustTest1")
-}
 
-func ReqTest2(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Request : /reqeustTest2")
+	resJson, _ := json.Marshal(mydb.DBProcess())
+
+	fmt.Fprintf(w, string(resJson))
 }
 
 func main() {
 	//라우팅
 	http.HandleFunc("/reqeustTest1", Middleware(ReqTest1))
-	http.HandleFunc("/reqeustTest2", Middleware(ReqTest2))
 
 	fmt.Println(`GO LANG WEB SERVER WORKING !`)
 
