@@ -1,8 +1,8 @@
 package models
 
 type Topic struct {
-	DOCIDs int
-	TERMS  string
+	DOCID int
+	TERMS string
 }
 
 type Emotion struct {
