@@ -37,9 +37,9 @@ func DBProcess() []Models.Topic {
 		topicSlice = append(topicSlice, topic)
 	}
 
-	for _, topic := range topicSlice {
-		log.Println(topic.DOCID, topic.TERMS)
-	}
+	// for _, topic := range topicSlice {
+	// 	log.Println(topic.DOCID, topic.TERMS)
+	// }
 
 	// var emotionSlice []Models.Emotion
 	// emotionRows, err := db.Query(secret.GetQuery("EMOTION"))
